@@ -7,6 +7,7 @@ import java.util.Scanner;
 
 public class Fechas {
     public static void main(String[] args) {
+        
         //  fecha y hora actual
         LocalDate fechaActual = LocalDate.now();
         System.out.println("Fecha y hora actual: " + fechaActual);
@@ -23,10 +24,12 @@ public class Fechas {
         LocalDate proximoCumple = fechaNacimiento.withYear(fechaActual.getYear());
         if (proximoCumple.isBefore(fechaActual) || proximoCumple.isEqual(fechaActual)) {
             proximoCumple = proximoCumple.plusYears(1);
+            
             System.out.println("este año ya has cumplido , felicidades !!");
         }
 
         long diasRestantes = ChronoUnit.DAYS.between(fechaActual, proximoCumple);
-        System.out.println("faltan " + diasRestantes + " dias para tu cumple!!");
+
+        System.out.println("faltan " + diasRestantes + " dias para tu cumpleaños !!");
     }
 }
